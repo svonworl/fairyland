@@ -1,2 +1,5 @@
 
 .DS_Store
+unpredict/Cromwell.stdout.txt
+unpredict/Cromwell.stderr.txt
+unpredict/cromwell-input/*
