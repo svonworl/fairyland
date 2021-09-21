@@ -1,6 +1,6 @@
 task outputs_with_unknown_names {
 	input {
-		File whatever
+		File to_rename
 	}
 	
 	command <<<
@@ -22,6 +22,6 @@ workflow proof_of_concept {
 	
 	call outputs_with_unknown_names {
 		input:
-			whatever = some_input_with_no_extension
+			to_rename = some_input_with_no_extension
 	}
 }
