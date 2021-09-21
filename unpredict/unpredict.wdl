@@ -32,11 +32,12 @@ task outputs_with_unknown_names {
 workflow proof_of_concept {
 	input {
 		File some_input_with_no_extension
+		File another_input
 	}
 	
 	call outputs_with_unknown_names {
 		input:
 			to_rename = some_input_with_no_extension,
-			also_to_rename = some_input_with_no_extension
+			also_to_rename = another_input
 	}
 }
