@@ -1,22 +1,27 @@
 #!/usr/bin/env cwl-runner
-
-cwlVersion: v1.2
+cwlVersion: v1.2 # Q1: Tool I'm converting is v1.1, is that okay?
 class: Workflow
-# Q1: Tool I'm converting is v1.1, is that okay?
 # Q2: Do the label and doc strings go here or elsewhere?
 # Q3: Should the namespaces be deleted?
-
 # To wrap the CWL tool in a workflow you will still need to specify the inputs and outputs
 inputs:
   ## Specify the inputs to the CWL workflow here
   ## They will be the same as the CWL tool inputs
-
   # Q4: Can these stay in the format used in the tool? ie, using id format
-  gds_file: File
-  out_prefix: string
-  sample_file: File?
-  cpu: int?
-
+  - id: gds_file
+    label: GDS file
+    doc: GDS file
+    type: File
+  - id: out_prefix
+    label: Output prefix
+    doc: Prefix for output files
+    type: string
+  - id: sample_file
+    label: Sample file
+    doc: RDS file with vector of sample.id to include in calculating allele frequency
+    type: File?
+  - id: cpu
+    type: int?
 outputs:
   ## Specify the outputs from the CWL workflow here
   ## They will be the same as the outputs from the CWL tool
@@ -25,9 +30,6 @@ outputs:
     doc: |-
       RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
     type: File
-    outputBinding:
-      glob: '*.rds'
-
 steps:
   cwl_tool_wrapper_workflow_step:
     in:
@@ -36,16 +38,9 @@ steps:
        out_prefix: out_prefix
        sample_file: sample_file
        cpu: cpu
-
     out:
       ## Specify the outputs from the CWL tool here
       - id: output_file
-        label: Output file
-        doc: |-
-          RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
-        type: File
-        outputBinding:
-          glob: '*.rds'
     run:
       cwlVersion: v1.1
       class: CommandLineTool
@@ -64,7 +59,6 @@ steps:
       - class: DockerRequirement
         dockerPull: uwgac/simphen:0.2.2
       - class: InlineJavascriptRequirement
-
       inputs:
       - id: gds_file
         label: GDS file
@@ -100,7 +94,6 @@ steps:
           position: 4
           shellQuote: false
         sbg:toolDefaultValue: '1'
-
       outputs:
       - id: output_file
         label: Output file
@@ -109,14 +102,10 @@ steps:
         type: File
         outputBinding:
           glob: '*.rds'
-
       baseCommand:
       - Rscript
       - /usr/local/simulate_phenotypes/tools/allele_freq.R
-
       stdout: job.out.log
       hints:
       - class: sbg:SaveLogs
         value: job.out.log
-
-
