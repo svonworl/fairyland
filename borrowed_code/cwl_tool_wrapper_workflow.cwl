@@ -49,7 +49,7 @@ inputs:
 outputs:
   ## Specify the outputs from the CWL workflow here
   ## They will be the same as the outputs from the CWL tool
-   - id: output_file
+  - id: output_file
     label: Output file
     doc: |-
       RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
@@ -69,12 +69,12 @@ steps:
     out:
       ## Specify the outputs from the CWL tool here
       - id: output_file
-          label: Output file
-          doc: |-
-            RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
-          type: File
-          outputBinding:
-            glob: '*.rds'
+        label: Output file
+        doc: |-
+          RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
+        type: File
+        outputBinding:
+          glob: '*.rds'
     run:
       cwlVersion: v1.1
       class: CommandLineTool
