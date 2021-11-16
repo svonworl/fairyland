@@ -1,7 +1,8 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.2 # Q1: Tool I'm converting is v1.1, is that okay?
+cwlVersion: v1.2
 class: Workflow
+# Q1: Tool I'm converting is v1.1, is that okay?
 # Q2: Do the label and doc strings go here or elsewhere?
 # Q3: Should the namespaces be deleted?
 
