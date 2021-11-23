@@ -34,7 +34,7 @@ outputs:
     doc: |-
       RDS file containing R data.frame with variant.id, chromosome, position, and alternate allele frequency.
     type: File
-    outputSource: cwl_tool_wrapper_workflow_step/output_file
+    outputSource: [ cwl_tool_wrapper_workflow_step/output_file ]
 
 steps:
   cwl_tool_wrapper_workflow_step:
