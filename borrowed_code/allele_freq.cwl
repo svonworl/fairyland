@@ -1,16 +1,12 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.2 # Q1: Tool I'm converting is v1.1, is that okay?
+cwlVersion: v1.2
 class: Workflow
-# Q2: Do the label and doc strings go here or elsewhere?
-# Q3: Should the namespaces be deleted?
 
 # To wrap the CWL tool in a workflow you will still need to specify the inputs and outputs
 inputs:
   ## Specify the inputs to the CWL workflow here
   ## They will be the same as the CWL tool inputs
-
-  # Q4: Can these stay in the format used in the tool? ie, using id format
   - id: gds_file
     label: GDS file
     doc: GDS file
@@ -53,7 +49,7 @@ steps:
       cwlVersion: v1.1
       class: CommandLineTool
       label: Allele frequency
-      doc: This tool is for testing only. All good code is by Stephanie Gogarten and Walt Shands. All bad code is by Ash O-apostrophe-Farrell.
+      doc: insert docs here
         
       #dct:creator:
       #  "@id": "http://orcid.org/0000-0002-7231-9745"
