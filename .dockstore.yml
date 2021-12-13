@@ -4,3 +4,7 @@ workflows:
     primaryDescriptorPath: /borrowed_code/cwl_tool_wrapper_workflow.cwl
     testParameterFiles:
       - /borrowed_code/allele_inputs.yml
+  - subclass: WDL
+    primaryDescriptorPath: /ld-pruning/ld-pruning-wf.wdl
+    testParameterFiles:
+      - /ld-pruning/ld-pruning-terra.json
