@@ -10,6 +10,3 @@ workflows:
     primaryDescriptorPath: /ld-pruning/ld-pruning-wf.wdl
     testParameterFiles:
       - /ld-pruning/ld-pruning-terra.json
-    filters:
-      branches: 
-        - branch**
