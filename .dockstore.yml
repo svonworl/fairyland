@@ -10,4 +10,4 @@ workflows:
       - /ld-pruning/ld-pruning-terra.json
     filters:
       branches: 
-        - branch*
+        - branch**
