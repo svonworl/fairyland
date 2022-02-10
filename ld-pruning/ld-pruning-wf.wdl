@@ -1,5 +1,7 @@
 version 1.0
 
+# hello!
+
 # General notes:
 #
 # variables and functions exclusive to the WDL version tend to have "py_" in front
