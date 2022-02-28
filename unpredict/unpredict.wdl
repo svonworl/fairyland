@@ -27,6 +27,12 @@ task outputs_with_unknown_names {
 		#File renamed_file = read_string("output.txt") # this works for one file output
 		Array[File] renamed_files = read_lines("output.txt")
 	}
+
+	runtime {
+		memory: "4 GB"
+		docker: "ubuntu:latest"
+		preemptibles: "1"
+	}
 }
 
 workflow proof_of_concept {
