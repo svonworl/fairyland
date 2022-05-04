@@ -1,12 +1,15 @@
 version: 1.2
 workflows:
-  - name: cwl-wrapper
-    subclass: CWL
-    primaryDescriptorPath: /borrowed_code/cwl_tool_wrapper_workflow.cwl
+  - subclass: WDL
+    primaryDescriptorPath: /ANOTHER_ld_pruning.wdl
     testParameterFiles:
-      - /borrowed_code/allele_inputs.yml
-  - name: wdl-pruning
-    subclass: WDL
-    primaryDescriptorPath: /ld-pruning/ld-pruning-wf.wdl
-    testParameterFiles:
-      - /ld-pruning/ld-pruning-terra.json
+      - /test.json
+    authors:
+      - name: Foo Bar
+      - email: foobar@hsph.harvard.edu
+  - subclass: CWL
+    primaryDescriptorPath: /CWL/staar_workflow.cwl
+    name: STAAR-workflow-cwl
+    authors:
+      - name: Lea Ackovic
+      - affiliation: Seven Bridges Genomics
