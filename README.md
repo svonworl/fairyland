@@ -17,7 +17,10 @@ The WDL spec says...
 ...but does this work on Terra? --> Yes it does!
 
 ### borrowed_code
-Testing a CWL tool --> CWL workflow wrapper.
+Testing a CWL tool --> CWL workflow wrapper. Original CWL tool by Stephanie Gogarten. Wrapper by Walt Shands.
+
+### ld_pruning
+Modified from the ld_pruning WDL I wrote for [analysis_pipeline_wdl](https://github.com/DataBiosphere/analysis_pipeline_WDL).
 
 ### underscores.wdl
 Demonstrates that underscores at the beginning of a variable declaration, but not the end, will cause failure to validate using womtool.
