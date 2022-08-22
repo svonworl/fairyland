@@ -4,6 +4,7 @@ workflows:
     primaryDescriptorPath: /ANOTHER_ld_pruning.wdl
     testParameterFiles:
       - /test.json
+    name: a-wdl
   - subclass: CWL
     primaryDescriptorPath: /CWL/staar_workflow.cwl
-    name: STAAR-workflow-cwl
+    name: a-cwl
