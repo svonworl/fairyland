@@ -1,9 +1,8 @@
 version: 1.2
 workflows:
+  - subclass: CWL
+    primaryDescriptorPath: /CWL/staar_workflow.cwl
   - subclass: WDL
     primaryDescriptorPath: /ANOTHER_ld_pruning.wdl
     testParameterFiles:
       - /test.json
-  - subclass: CWL
-    primaryDescriptorPath: /CWL/staar_workflow.cwl
-    name: STAAR-workflow-cwl
