@@ -4,6 +4,12 @@ workflows:
     primaryDescriptorPath: /ANOTHER_ld_pruning.wdl
     testParameterFiles:
       - /test.json
+    authors:
+      - name: Foo Bar
+      - email: foobar@hsph.harvard.edu
   - subclass: CWL
     primaryDescriptorPath: /CWL/staar_workflow.cwl
     name: STAAR-workflow-cwl
+    authors:
+      - name: Lea Ackovic
+      - affiliation: Seven Bridges Genomics
