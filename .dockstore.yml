@@ -6,4 +6,3 @@ workflows:
       - /test.json
   - subclass: CWL
     primaryDescriptorPath: /CWL/staar_workflow.cwl
-    name: STAAR-workflow-cwl
